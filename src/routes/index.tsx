@@ -4,6 +4,10 @@ import { Hero } from "@/components/landing/Hero";
 import { LogosBar } from "@/components/landing/LogosBar";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Features } from "@/components/landing/Features";
+import { ProductShowcase } from "@/components/landing/ProductShowcase";
+import { UseCases } from "@/components/landing/UseCases";
+import { Comparison } from "@/components/landing/Comparison";
+import { StatsBand } from "@/components/landing/StatsBand";
 import { Integrations } from "@/components/landing/Integrations";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Pricing } from "@/components/landing/Pricing";
@@ -41,7 +45,11 @@ function Index() {
         <Hero />
         <LogosBar />
         <HowItWorks />
+        <ProductShowcase />
         <Features />
+        <UseCases />
+        <StatsBand />
+        <Comparison />
         <Integrations />
         <Testimonials />
         <Pricing />
