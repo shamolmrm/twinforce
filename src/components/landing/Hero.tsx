@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
 const metrics = [
-  { value: "$180B", label: "Total Addressable Market", accent: true },
-  { value: "0", label: "Direct Competitors", accent: true },
-  { value: "97%", label: "Knowledge Retention", accent: true },
-  { value: "∞", label: "Availability", accent: true },
+  { value: "10x", label: "Faster Onboarding", accent: true },
+  { value: "70%", label: "Lower Ops Cost", accent: true },
+  { value: "24/7", label: "Always-On Workforce", accent: true },
+  { value: "500+", label: "Enterprise Teams", accent: true },
 ];
 
 export function Hero() {
