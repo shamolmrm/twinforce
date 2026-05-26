@@ -39,7 +39,27 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+      {/* Animated background layers */}
+      <div aria-hidden className="bg-aurora" />
+      <div aria-hidden className="bg-grid" />
+      <div
+        aria-hidden
+        className="bg-orb"
+        style={{ top: "20%", left: "10%", background: "var(--primary)", animationDelay: "0s" }}
+      />
+      <div
+        aria-hidden
+        className="bg-orb"
+        style={{ top: "60%", right: "8%", background: "var(--accent)", animationDelay: "4s" }}
+      />
+      <div
+        aria-hidden
+        className="bg-orb"
+        style={{ top: "85%", left: "40%", background: "var(--secondary)", animationDelay: "8s" }}
+      />
+
+      <div className="relative z-10">
       <Navbar />
       <main>
         <Hero />
@@ -57,6 +77,7 @@ function Index() {
         <CtaBanner />
       </main>
       <Footer />
+      </div>
     </div>
   );
 }
