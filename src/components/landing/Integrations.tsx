@@ -9,6 +9,16 @@ import {
   Figma,
   FileText,
   Video,
+  Trello,
+  Gitlab,
+  Chrome,
+  HardDrive,
+  Lock,
+  ShoppingCart,
+  CreditCard,
+  BarChart3,
+  Globe,
+  Smartphone,
   type LucideIcon,
 } from "lucide-react";
 
