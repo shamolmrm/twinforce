@@ -10,6 +10,7 @@ import { Comparison } from "@/components/landing/Comparison";
 import { StatsBand } from "@/components/landing/StatsBand";
 import { Integrations } from "@/components/landing/Integrations";
 import { Testimonials } from "@/components/landing/Testimonials";
+import { Countries } from "@/components/landing/Countries";
 import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
 import { CtaBanner } from "@/components/landing/CtaBanner";
@@ -72,6 +73,7 @@ function Index() {
         <Comparison />
         <Integrations />
         <Testimonials />
+        <Countries />
         <Pricing />
         <FAQ />
         <CtaBanner />
