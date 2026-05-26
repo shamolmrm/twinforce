@@ -15,6 +15,7 @@ import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
 import { CtaBanner } from "@/components/landing/CtaBanner";
 import { Footer } from "@/components/landing/Footer";
+import { LiveChat } from "@/components/landing/LiveChat";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -80,6 +81,7 @@ function Index() {
       </main>
       <Footer />
       </div>
+      <LiveChat />
     </div>
   );
 }
