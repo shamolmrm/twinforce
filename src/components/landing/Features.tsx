@@ -90,6 +90,11 @@ const features: Feature[] = [
     title: "Role-Based Access",
     desc: "Granular permissions, audit logs and SSO/SAML — enterprise-ready from day one.",
   },
+  {
+    icon: Sparkles,
+    title: "Proactive Mode",
+    desc: "Twin anticipates tasks, surfaces insights and drafts replies before you even ask.",
+  },
 ];
 
 export function Features() {
