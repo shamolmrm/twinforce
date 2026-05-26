@@ -5,6 +5,14 @@ import {
   Mail,
   FileBarChart,
   ShieldCheck,
+  Languages,
+  Workflow,
+  Calendar,
+  Mic,
+  Brain,
+  Users,
+  Activity,
+  KeyRound,
   type LucideIcon,
 } from "lucide-react";
 
@@ -40,6 +48,46 @@ const features: Feature[] = [
     icon: ShieldCheck,
     title: "Zero Data Leak",
     desc: "On-premise deployment, SOC2 compliant. Your data never leaves your infrastructure.",
+  },
+  {
+    icon: Languages,
+    title: "Multilingual Twin",
+    desc: "Speaks, writes and replies in 40+ languages while preserving each employee's tone.",
+  },
+  {
+    icon: Workflow,
+    title: "Workflow Automation",
+    desc: "Connect Slack, Jira, Notion & HubSpot — twin executes routine tasks end-to-end.",
+  },
+  {
+    icon: Calendar,
+    title: "Smart Scheduling",
+    desc: "Auto-books meetings, resolves conflicts and protects deep-work hours intelligently.",
+  },
+  {
+    icon: Mic,
+    title: "Voice Cloning",
+    desc: "Studio-grade voice replica for calls, voicemails and async video updates.",
+  },
+  {
+    icon: Brain,
+    title: "Decision Memory",
+    desc: "Remembers every past decision, rationale and outcome — never repeats mistakes.",
+  },
+  {
+    icon: Users,
+    title: "Team Collaboration",
+    desc: "Twins talk to each other to unblock teammates instantly across time zones.",
+  },
+  {
+    icon: Activity,
+    title: "Real-time Analytics",
+    desc: "Live dashboards on twin performance, hours saved and tasks delegated.",
+  },
+  {
+    icon: KeyRound,
+    title: "Role-Based Access",
+    desc: "Granular permissions, audit logs and SSO/SAML — enterprise-ready from day one.",
   },
 ];
 
