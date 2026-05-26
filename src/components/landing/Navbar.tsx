@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 
 const links = [
   { label: "Product", href: "#product" },
-  { label: "How it works", href: "#how" },
-  { label: "Features", href: "#features" },
+  { label: "Enterprise", href: "#enterprise" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Docs", href: "#docs" },
 ];
 
 export function Navbar() {
@@ -26,14 +26,9 @@ export function Navbar() {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
-          <Button variant="ghost" size="sm" className="hidden sm:inline-flex">
-            Sign in
-          </Button>
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Book demo
-          </Button>
-        </div>
+        <Button size="sm" variant="outline" className="border-border bg-card/40 hover:bg-card">
+          Request Demo
+        </Button>
       </div>
     </header>
   );
