@@ -1,4 +1,4 @@
-import { Code2, Headphones, LineChart, Megaphone, Scale, Stethoscope, type LucideIcon } from "lucide-react";
+import { Building2, Code2, Factory, GraduationCap, Headphones, Landmark, LineChart, Megaphone, Scale, ShoppingCart, Stethoscope, UserCheck, type LucideIcon } from "lucide-react";
 
 type UseCase = { icon: LucideIcon; role: string; impact: string; desc: string };
 
@@ -9,6 +9,12 @@ const cases: UseCase[] = [
   { icon: Megaphone, role: "Marketing", impact: "10x output", desc: "Brand-consistent copy, briefs, and campaign analysis." },
   { icon: Scale, role: "Legal & Compliance", impact: "Zero leak", desc: "Contract review with redlines in your firm's voice." },
   { icon: Stethoscope, role: "Healthcare Ops", impact: "HIPAA", desc: "Clinical note drafting and care coordination workflows." },
+  { icon: ShoppingCart, role: "E-commerce & Retail", impact: "+55% conv", desc: "Product Q&A, returns, cart recovery in local language & tone." },
+  { icon: Landmark, role: "FinTech & Banking", impact: "-80% KYC time", desc: "Onboarding, fraud alerts, and account servicing at scale." },
+  { icon: Building2, role: "Real Estate", impact: "3x leads", desc: "Property inquiries, viewings, and follow-ups on autopilot." },
+  { icon: Factory, role: "Manufacturing", impact: "-45% downtime", desc: "Vendor coordination, inventory alerts, and QC workflows." },
+  { icon: UserCheck, role: "HR & Talent", impact: "-60% hire time", desc: "Screening, scheduling, and onboarding at high volume." },
+  { icon: GraduationCap, role: "EdTech", impact: "24/7 tutor", desc: "Student support, grading help, and course guidance round the clock." },
 ];
 
 export function UseCases() {
