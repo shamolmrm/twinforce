@@ -1,8 +1,10 @@
 const stats = [
-  { v: "12M+", k: "Twin actions executed monthly" },
-  { v: "99.98%", k: "Production uptime SLA" },
-  { v: "<8ms", k: "Avg policy decision latency" },
-  { v: "$42M", k: "Customer payroll re-allocated to growth" },
+  { v: "12M+", k: "Twin actions monthly" },
+  { v: "99.98%", k: "Uptime SLA" },
+  { v: "68%", k: "Faster resolution" },
+  { v: "42+", k: "Countries deployed" },
+  { v: "40+", k: "Languages supported" },
+  { v: "3.4x", k: "Team velocity" },
 ];
 
 export function StatsBand() {
