@@ -35,6 +35,77 @@ const quotes: Quote[] = [
   },
 ];
 
+const extraQuotes: Quote[] = [
+  {
+    quote: "The audit trail alone sold our security team. Every twin decision is replayable end-to-end.",
+    name: "Daniel Okafor",
+    role: "CISO, Helix Bank",
+    initials: "DO",
+    avatarBg: "bg-cyan-500/20 text-cyan-300",
+  },
+  {
+    quote: "We onboard new market analysts in 3 days instead of 3 months. Their twin is productive on day one.",
+    name: "Yuki Tanaka",
+    role: "Head of Research, Mori Capital",
+    initials: "YT",
+    avatarBg: "bg-fuchsia-500/20 text-fuchsia-300",
+  },
+  {
+    quote: "Email autopilot ships in our brand voice. We cut response time from 6 hours to under 4 minutes.",
+    name: "Lena Müller",
+    role: "COO, Berlin Logistics",
+    initials: "LM",
+    avatarBg: "bg-amber-500/20 text-amber-300",
+  },
+  {
+    quote: "Per-employee pricing finally made AI a line item my CFO loved. ROI in week two.",
+    name: "Carlos Mendes",
+    role: "VP Ops, Lumen Health",
+    initials: "CM",
+    avatarBg: "bg-violet-500/20 text-violet-300",
+  },
+  {
+    quote: "Twins join standups, take notes, and ship PRs while the team sleeps. It feels like a 2x headcount jump.",
+    name: "Priya Shah",
+    role: "Engineering Director, Tessera",
+    initials: "PS",
+    avatarBg: "bg-teal-500/20 text-teal-300",
+  },
+  {
+    quote: "Deployed in our VPC. Zero data leaves. Compliance signed off on day one.",
+    name: "Mohammed Al-Sayed",
+    role: "Head of AI, Falcon Group",
+    initials: "MA",
+    avatarBg: "bg-orange-500/20 text-orange-300",
+  },
+];
+
+const allQuotes = [...quotes, ...extraQuotes];
+
+function QuoteCard({ q }: { q: Quote }) {
+  return (
+    <figure className="flex w-[360px] shrink-0 flex-col rounded-2xl border border-border bg-card/60 p-7 backdrop-blur">
+      <div className="flex gap-0.5 text-primary">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Star key={i} className="h-4 w-4 fill-current" />
+        ))}
+      </div>
+      <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-foreground/90">
+        &ldquo;{q.quote}&rdquo;
+      </blockquote>
+      <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
+        <div className={"flex h-10 w-10 items-center justify-center rounded-full text-xs font-semibold " + q.avatarBg}>
+          {q.initials}
+        </div>
+        <div>
+          <div className="font-heading text-sm font-bold">{q.name}</div>
+          <div className="text-xs text-muted-foreground">{q.role}</div>
+        </div>
+      </figcaption>
+    </figure>
+  );
+}
+
 export function Testimonials() {
   return (
     <section className="border-b border-border py-24">
@@ -45,36 +116,20 @@ export function Testimonials() {
         <h2 className="mt-4 max-w-2xl text-4xl font-bold sm:text-5xl">
           Operators ship faster with their twin.
         </h2>
+      </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {quotes.map((q) => (
-            <figure
-              key={q.name}
-              className="flex flex-col rounded-2xl border border-border bg-card/60 p-7 backdrop-blur"
-            >
-              <div className="flex gap-0.5 text-primary">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-foreground/90">
-                &ldquo;{q.quote}&rdquo;
-              </blockquote>
-              <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
-                <div
-                  className={
-                    "flex h-10 w-10 items-center justify-center rounded-full text-xs font-semibold " +
-                    q.avatarBg
-                  }
-                >
-                  {q.initials}
-                </div>
-                <div>
-                  <div className="font-heading text-sm font-bold">{q.name}</div>
-                  <div className="text-xs text-muted-foreground">{q.role}</div>
-                </div>
-              </figcaption>
-            </figure>
+      {/* Marquee rows */}
+      <div className="relative mt-14 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+        <div className="flex w-max gap-6 animate-marquee">
+          {[...allQuotes, ...allQuotes].map((q, i) => (
+            <QuoteCard key={"r1-" + i} q={q} />
+          ))}
+        </div>
+      </div>
+      <div className="relative mt-6 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+        <div className="flex w-max gap-6 animate-marquee" style={{ animationDirection: "reverse", animationDuration: "50s" }}>
+          {[...allQuotes.slice().reverse(), ...allQuotes.slice().reverse()].map((q, i) => (
+            <QuoteCard key={"r2-" + i} q={q} />
           ))}
         </div>
       </div>
