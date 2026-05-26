@@ -35,6 +35,16 @@ const integrations: Integration[] = [
   { name: "Figma", icon: Figma },
   { name: "Notion", icon: FileText },
   { name: "Zoom", icon: Video },
+  { name: "Trello", icon: Trello },
+  { name: "GitLab", icon: Gitlab },
+  { name: "Chrome", icon: Chrome },
+  { name: "Drive", icon: HardDrive },
+  { name: "Auth0", icon: Lock },
+  { name: "Shopify", icon: ShoppingCart },
+  { name: "Stripe", icon: CreditCard },
+  { name: "Tableau", icon: BarChart3 },
+  { name: "Vercel", icon: Globe },
+  { name: "Mobile", icon: Smartphone },
 ];
 
 export function Integrations() {
