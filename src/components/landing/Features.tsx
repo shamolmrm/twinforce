@@ -13,6 +13,7 @@ import {
   Users,
   Activity,
   KeyRound,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
