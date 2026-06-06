@@ -138,7 +138,7 @@ export function Pricing() {
         </div>
 
         {/* Enterprise tier */}
-        <div className="mt-8 rounded-2xl border border-border bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-8 backdrop-blur">
+        <div id="enterprise" className="mt-8 rounded-2xl border border-border bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 p-8 backdrop-blur">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div className="flex items-start gap-5">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
@@ -169,12 +169,14 @@ export function Pricing() {
                 </ul>
               </div>
             </div>
-            <Button
-              className="shrink-0 bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Contact Sales
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </Button>
+            <a href="/contact" className="shrink-0 inline-block">
+              <Button
+                className="shrink-0 bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Contact Sales
+                <ArrowRight className="ml-1 h-4 w-4" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>

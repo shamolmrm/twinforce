@@ -34,22 +34,26 @@ export function Hero() {
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-border bg-card/40 hover:bg-card"
-          >
-            Start Free Trial
-            <ArrowRight className="ml-1 h-4 w-4" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-border bg-card/40 hover:bg-card"
-          >
-            <Play className="mr-1 h-4 w-4 fill-current" />
-            Watch Demo
-          </Button>
+          <a href="/contact?trial=1" className="inline-block">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-border bg-card/40 hover:bg-card"
+            >
+              Start Free Trial
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </Button>
+          </a>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noreferrer" className="inline-block">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-border bg-card/40 hover:bg-card"
+            >
+              <Play className="mr-1 h-4 w-4 fill-current" />
+              Watch Demo
+            </Button>
+          </a>
         </div>
 
         {/* Metrics bar */}

@@ -9,7 +9,7 @@ const activity = [
 
 export function ProductShowcase() {
   return (
-    <section className="border-b border-border py-24">
+    <section id="product" className="border-b border-border py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>

@@ -1,11 +1,16 @@
 const groups = [
   {
     title: "Product",
-    links: ["Features", "Pricing", "Integrations", "Changelog"],
+    links: [
+      { label: "Features", href: "#features" },
+      { label: "Pricing", href: "#pricing" },
+      { label: "Integrations", href: "#integrations" },
+      { label: "Changelog", href: "/docs#changelog" },
+    ],
   },
-  { title: "Company", links: ["About", "Customers", "Careers", "Press"] },
-  { title: "Resources", links: ["Docs", "Blog", "Security", "Status"] },
-  { title: "Legal", links: ["Privacy", "Terms", "DPA", "Cookies"] },
+  { title: "Company", links: [{ label: "About", href: "/docs#about" }, { label: "Customers", href: "/docs#customers" }, { label: "Careers", href: "/docs#careers" }, { label: "Press", href: "/docs#press" }] },
+  { title: "Resources", links: [{ label: "Docs", href: "/docs" }, { label: "Blog", href: "/docs#blog" }, { label: "Security", href: "/docs#security" }, { label: "Status", href: "/docs#status" }] },
+  { title: "Legal", links: [{ label: "Privacy", href: "/docs#privacy" }, { label: "Terms", href: "/docs#terms" }, { label: "DPA", href: "/docs#dpa" }, { label: "Cookies", href: "/docs#cookies" }] },
 ];
 
 export function Footer() {
@@ -28,13 +33,13 @@ export function Footer() {
                 {g.title}
               </div>
               <ul className="mt-4 space-y-2">
-                {g.links.map((l) => (
-                  <li key={l}>
+                {g.links.map((l: any) => (
+                  <li key={l.label}>
                     <a
-                      href="#"
+                      href={l.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {l}
+                      {l.label}
                     </a>
                   </li>
                 ))}
