@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { AuthProvider } from "@/lib/auth";
 
 function NotFoundComponent() {
   return (
@@ -72,16 +73,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "TwinForce Digital Twin offers an AI-powered platform for creating and managing digital twins of your workforce." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "TwinForce Digital Twin offers an AI-powered platform for creating and managing digital twins of your workforce." },
+      { title: "TwinForce — Digital Twin Workforce" },
+      { name: "description", content: "Deploy AI digital twins of your best operators. 24/7, governed, and production-ready in days." },
+      { name: "author", content: "TwinForce" },
+      { property: "og:title", content: "TwinForce — Digital Twin Workforce" },
+      { property: "og:description", content: "Deploy AI digital twins of your best operators. 24/7, governed, and production-ready in days." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "TwinForce Digital Twin offers an AI-powered platform for creating and managing digital twins of your workforce." },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@TwinForceAI" },
+      { name: "twitter:title", content: "TwinForce — Digital Twin Workforce" },
+      { name: "twitter:description", content: "Deploy AI digital twins of your best operators. 24/7, governed, and production-ready in days." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cc7053c8-7a75-4737-98c4-653a9ec691e1/id-preview-d80fe678--b68531e3-3ed5-4656-ab48-74d65474b35f.lovable.app-1779816241495.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/cc7053c8-7a75-4737-98c4-653a9ec691e1/id-preview-d80fe678--b68531e3-3ed5-4656-ab48-74d65474b35f.lovable.app-1779816241495.png" },
     ],
@@ -117,7 +118,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <AuthProvider>
+        <Outlet />
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

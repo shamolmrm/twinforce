@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: twinforce
+  labels:
+    app.kubernetes.io/name: twinforce
+    environment: production

@@ -2,15 +2,39 @@ const groups = [
   {
     title: "Product",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "Integrations", href: "#integrations" },
+      { label: "Features", href: "/#features" },
+      { label: "Pricing", href: "/#pricing" },
+      { label: "Integrations", href: "/#integrations" },
       { label: "Changelog", href: "/docs#changelog" },
     ],
   },
-  { title: "Company", links: [{ label: "About", href: "/docs#about" }, { label: "Customers", href: "/docs#customers" }, { label: "Careers", href: "/docs#careers" }, { label: "Press", href: "/docs#press" }] },
-  { title: "Resources", links: [{ label: "Docs", href: "/docs" }, { label: "Blog", href: "/docs#blog" }, { label: "Security", href: "/docs#security" }, { label: "Status", href: "/docs#status" }] },
-  { title: "Legal", links: [{ label: "Privacy", href: "/docs#privacy" }, { label: "Terms", href: "/docs#terms" }, { label: "DPA", href: "/docs#dpa" }, { label: "Cookies", href: "/docs#cookies" }] },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/docs#about" },
+      { label: "Customers", href: "/docs#customers" },
+      { label: "Careers", href: "/docs#careers" },
+      { label: "Press", href: "/docs#press" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Docs", href: "/docs" },
+      { label: "Blog", href: "/docs#blog" },
+      { label: "Security", href: "/docs#security" },
+      { label: "Status", href: "/docs#status" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
+      { label: "DPA", href: "/privacy#dpa" },
+      { label: "Cookies", href: "/privacy#cookies" },
+    ],
+  },
 ];
 
 export function Footer() {

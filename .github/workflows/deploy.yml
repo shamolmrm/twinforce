@@ -1,0 +1,68 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: "staging"
+        type: choice
+        options: [staging, production]
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to ${{ github.event.inputs.environment || 'staging' }}
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Update kubeconfig
+        run: aws eks update-kubeconfig --region us-east-1 --name twinforce
+
+      - name: Deploy API
+        run: |
+          kubectl set image deployment/twinforce-api api=ghcr.io/${{ github.repository }}/api:${{ github.sha }} -n twinforce
+          kubectl rollout status deployment/twinforce-api -n twinforce --timeout=300s
+
+      - name: Deploy AI
+        run: |
+          kubectl set image deployment/twinforce-ai ai=ghcr.io/${{ github.repository }}/ai:${{ github.sha }} -n twinforce
+          kubectl rollout status deployment/twinforce-ai -n twinforce --timeout=300s
+
+      - name: Run DB migrations
+        run: |
+          kubectl run migrations --image=ghcr.io/${{ github.repository }}/api:${{ github.sha }} \
+            --restart=Never --rm --attach \
+            -n twinforce \
+            --env-from=secret/twinforce-secrets \
+            -- bun run db:migrate
+
+      - name: Health check
+        run: |
+          sleep 15
+          kubectl get pods -n twinforce
+          echo "Deployment complete"
+
+      - name: Notify on failure
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: danger
+          SLACK_MESSAGE: "TwinForce deployment FAILED on ${{ github.sha }}"

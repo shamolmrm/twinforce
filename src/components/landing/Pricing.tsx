@@ -121,18 +121,20 @@ export function Pricing() {
                 ))}
               </ul>
 
-              <Button
-                className={
-                  "mt-7 w-full " +
-                  (t.highlight
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "border border-border bg-card/40 text-foreground hover:bg-card")
-                }
-                variant={t.highlight ? "default" : "outline"}
-              >
-                {t.cta}
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
+              <a href="/signup" className="block mt-7">
+                <Button
+                  className={
+                    "w-full " +
+                    (t.highlight
+                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                      : "border border-border bg-card/40 text-foreground hover:bg-card")
+                  }
+                  variant={t.highlight ? "default" : "outline"}
+                >
+                  {t.cta}
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Button>
+              </a>
             </div>
           ))}
         </div>

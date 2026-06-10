@@ -19,7 +19,7 @@ const cases: UseCase[] = [
 
 export function UseCases() {
   return (
-    <section className="border-b border-border py-24">
+    <section id="use-cases" className="border-b border-border py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>

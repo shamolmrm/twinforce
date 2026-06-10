@@ -26,20 +26,24 @@ export function CtaBanner() {
               the embeddings.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                Start Free Trial
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-border bg-card/40 hover:bg-card"
-              >
-                Talk to Sales
-              </Button>
+              <a href="/signup">
+                <Button
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90"
+                >
+                  Start Free Trial
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Button>
+              </a>
+              <a href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-border bg-card/40 hover:bg-card"
+                >
+                  Talk to Sales
+                </Button>
+              </a>
             </div>
             <div className="mt-6 text-xs text-muted-foreground">
               No credit card required · SOC 2 Type II · Deploys in your VPC

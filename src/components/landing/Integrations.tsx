@@ -49,7 +49,7 @@ const integrations: Integration[] = [
 
 export function Integrations() {
   return (
-    <section className="border-b border-border py-24">
+    <section id="integrations" className="border-b border-border py-24">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-5 lg:items-center">
         <div className="lg:col-span-2">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
